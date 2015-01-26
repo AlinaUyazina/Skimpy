@@ -27,4 +27,20 @@ public class TescoSpider extends WebSpider
 		}
 		return allDepartments;
 	}
+
+	public List<Category> listCategories(String departmentURL)
+	{
+		List<Category> allCategories = new ArrayList<Category>();
+
+		Elements categoriesNodes = this.getHTML(departmentURL).select("#superDeptItems div.column ul li");
+
+		for (Element c : categoriesNodes)
+		{
+			String name = c.select("a").text();
+			String link = c.select("a").attr("href");
+			Category cat = new Category(name, link);
+			allCategories.add(cat);
+		}
+		return allCategories;
+	}
 }
