@@ -3,7 +3,6 @@ package BusinessLogic;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//testing git lalalalala
 public class CreateMealPlan {
 	
 	
@@ -26,8 +25,6 @@ public class CreateMealPlan {
     	ArrayList<Food> ing1D = new ArrayList<Food>();
     	ArrayList<Food> ing2D = new ArrayList<Food>();
     	ArrayList<Food> ing3D = new ArrayList<Food>();
-    	
-
     	
     	//Breakfast
     	ing1B.add(ID1);

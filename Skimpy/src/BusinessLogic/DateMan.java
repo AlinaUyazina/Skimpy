@@ -1,16 +1,13 @@
+package BusinessLogic;
 /**
  *
+
  ** @author fps
  */
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * FILIP! CAN YOU DOCUMENT THE BLUE SECTIONS IN THIS FILE
- * A representation of a date.
- *
- */
 public class DateMan
 {
 	/**
