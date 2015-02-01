@@ -8,12 +8,10 @@ import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 
-public abstract class WebSpider
-{
+public abstract class WebSpider {
 	public String rootPageURL;
 
-	public Document getHTML(String url)
-	{
+	public Document getHTML(String url) {
 		String charset = StandardCharsets.UTF_8.name();
 
 		HttpURLConnection connection;
@@ -23,8 +21,7 @@ public abstract class WebSpider
 		String inLine;
 		StringBuffer responseContent;
 
-		try
-		{
+		try {
 			connection = (HttpURLConnection)new URL(url).openConnection();
 			connection.setRequestProperty("Accept-Charset", charset);
 
@@ -35,19 +32,16 @@ public abstract class WebSpider
 			inBuff = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			responseContent = new StringBuffer();
 
-			while ((inLine = inBuff.readLine()) != null)
-			{
+			while ((inLine = inBuff.readLine()) != null) {
 				responseContent.append(inLine);
 			}
 			inBuff.close();
 		}
-		catch (MalformedURLException mal)
-		{
+		catch (MalformedURLException mal) {
 			mal.printStackTrace();
 			return null;
 		}
-		catch (IOException ioe)
-		{
+		catch (IOException ioe) {
 			ioe.printStackTrace();
 			return null;
 		}
@@ -56,8 +50,7 @@ public abstract class WebSpider
 		return html;
 	}
 
-	public String getDocumentTitle(Document html)
-	{
+	public String getDocumentTitle(Document html) {
 		return html.select("title").text();
 	}
 	
