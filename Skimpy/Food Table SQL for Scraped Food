@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS `scraped_food` (
+  ID int NOT NULL AUTO_INCREMENT,
+  Name varchar(150),
+  Units varchar(20),
+  Mass float,
+  Price float,
+  PricePUnit float,
+  FoodCat text,
+  PRIMARY KEY (ID)
+);
+
+
+-----create the table first and AFTER that use this query to make the food ID's start from 100.
+
+ALTER TABLE scraped_food AUTO_INCREMENT = 100;
